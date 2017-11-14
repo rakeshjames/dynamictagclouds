@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Allows administrators to customize page level access.
+ */
+
+define('TAG_CLOUD_STYLES', 'default');
+
+function dynamictagclouds_theme() {
+  $themes = [];
+  $styles = explode(',', constant('TAG_CLOUD_STYLES'));
+  foreach ($styles as $style) {
+    $themes[$style . '_tag_clouds'] = [
+      'variables' => [
+        'tags' => NULL,
+      ],
+      'template' => $style . '-tag-clouds',
+    ];
+  }
+
+  return $themes;
+}

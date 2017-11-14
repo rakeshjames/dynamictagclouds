@@ -1,0 +1,4 @@
+default_tag_cloud:
+  css:
+    component:
+      css/default_tag_cloud.css: {}
